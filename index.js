@@ -1,18 +1,15 @@
 
 // Our Main Function WHen Add Button is Clicked
-function AddTodo(){
+function AddTodo() {
 
     let TodoInput = document.getElementById('TodoInput').value;
     let TodoList = document.getElementById('TodoList');
 
     // Firstly Check The Todo Is Empty or Not
-    if(TodoInput == '' || TodoInput == ' '){
+    if (TodoInput == '' || TodoInput == ' ') {
         alert("Please Add Some Task")
     }
-    else{
-
-        TodoList.style.backgroundColor = 'white';
-        TodoList.style.border = '1px solid gray';
+    else {
         // Create Div and Add ClassName
         let mainDiv = document.createElement('div');
         mainDiv.className = 'SingleTodo';
@@ -20,23 +17,23 @@ function AddTodo(){
         // Create Input Tag and make its Type Checkbox
         let checkboxInput = document.createElement('input')
         checkboxInput.type = 'checkbox';
-        
+
         //If the checbox is clicked we add styling for line-through
-        checkboxInput.onclick = function(e){
+        checkboxInput.onclick = function (e) {
             e.target.nextElementSibling.style.textDecoration = 'line-through';
         }
 
         // Create P Tag and Add text that we get from Todo Input
         let pText = document.createElement('p');
         pText.appendChild(document.createTextNode(TodoInput));
-        
+
         // Create Delete Button And Add Onclick Function
         let DelBtn = document.createElement('button');
         DelBtn.appendChild(document.createTextNode('Delete'));
-        DelBtn.onclick = function (e){
+        DelBtn.onclick = function (e) {
 
-              let a = e.target.parentElement;
-              TodoList.removeChild(a);
+            let a = e.target.parentElement;
+            TodoList.removeChild(a);
 
         }
 
@@ -47,7 +44,7 @@ function AddTodo(){
 
         // Add Main Div to our TodoList Section Reversly
         TodoList.insertBefore(mainDiv, TodoList.childNodes[0]);
- 
+
         // Empty the Input Field
         document.getElementById('TodoInput').value = '';
     }
