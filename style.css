@@ -65,3 +65,16 @@ body {
   padding: 10px;
   border-radius: 5px;
 }
+
+/* Mobile View*/
+@media screen and (max-width: 480px) {
+  .AddTodo input {
+    width: 60%;
+  }
+  .AddTodo button {
+    width: auto;
+  }
+  .TodoList {
+    width: 80%;
+  }
+}
